@@ -1,0 +1,14 @@
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.csproj.AssemblyReference.cache
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.AssemblyInfoInputs.cache
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.AssemblyInfo.cs
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.csproj.CoreCompileInputs.cache
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\bin\Debug\netcoreapp3.1\Nomina.ClienteRest.deps.json
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\bin\Debug\netcoreapp3.1\Nomina.ClienteRest.dll
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\bin\Debug\netcoreapp3.1\Nomina.ClienteRest.pdb
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\bin\Debug\netcoreapp3.1\Api.Models.Nomina.dll
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.csproj.CopyComplete
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.dll
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\obj\Debug\netcoreapp3.1\Nomina.ClienteRest.pdb
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\bin\Debug\netcoreapp3.1\Aplics.Nominix.DTOS.dll
+C:\Users\ivan.tapia\source\Examen Prueba\Nomina2\Nomina.ClienteRest\bin\Debug\netcoreapp3.1\Aplics.Nominix.DTOS.pdb

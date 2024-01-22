@@ -1,0 +1,198 @@
+﻿@*@model Nomina2.Models.Response.ComboGeneralResponseDTO*@
+@{
+
+        var _ListCategory = new List<SelectListItem>();
+        if (ViewBag.Select != null)
+        {
+            _ListCategory = (List<SelectListItem>)ViewBag.Select;
+        }    
+
+
+
+}
+<!-- formulario Ubicacion -->
+<form>
+    <div class="row">
+        <!-- primer col -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Categoria</label>
+                @Html.DropDownList("PresentacionId", _ListCategory,"--Selecciona--", new { @class = "form-control", @required = "required" })
+
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Estado civil</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Sexo</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">impuesto Estatal</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Prestaciones</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Clave contable</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Horario</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Forma de Pago</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Banco</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Sucursal Bancaria</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Cuenta Bancaria</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+        </div>
+        <!-- end primer col -->
+        <!-- segundo col  -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Tipo de Cuenta</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Clabe</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Cuenta Vales</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 1</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 2</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 3</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 4</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 5</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 6</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 7</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Codigo Reservado 8</label>
+                <select class="form-control form-control-lg">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

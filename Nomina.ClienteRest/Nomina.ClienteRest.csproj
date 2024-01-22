@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Downloads\Aplics.Nominix.DTOS\Aplics.Nominix.DTOS\Aplics.Nominix.DTOS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Api.Models.Nomina">
+      <HintPath>..\Api.Models.Nomina.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

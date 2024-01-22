@@ -1,0 +1,267 @@
+﻿@{
+    Layout = "_Layout";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Filtros</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="selectCompaniaFiltro">Compañia</label>
+                            <select class="form-control form-control-md" id="selectCompaniaFiltro" name="selectCompaniaFiltro">
+                                @*<option selected disabled value="">--Selecciona--</option>*@
+                                @*<option value="1">Compañia 1</option>
+                                    <option value="2">Compañia 2</option>
+                                    <option value="3">Compañia 3</option>*@
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="selectLocalidadFiltro">Localidad</label>
+                            <select class="form-control form-control-md" id="selectLocalidadFiltro" name="selectLocalidadFiltro">
+                                @*    <option selected disabled value="">--Selecciona--</option>*@
+                                @* <option value="1">Localidad  1</option>
+                                    <option value="2">Localidad 2</option>
+                                    <option value="3">Localidad 3</option>*@
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <button onclick="FiltrarDatos(this)" class="btn btn-info" type="button">Filtrar</button>
+                    @*<button onclick="LimpiarFiltros(this)" class="btn btn-danger" type="button">Limpiar</button>*@
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Nomina</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Empleados
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col-md-12">
+            <table id="tblEmpleados" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @* <tbody>
+                    <tr>
+                    <td>Tiger</td>
+                    <td>Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011-04-25</td>
+                    <td>$320,800</td>
+                    <td>5421</td>
+                    <td>t.nixon@datatables.net</td>
+                    </tr>
+                    </tbody>*@
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button onclick="OpenModalNuevoEmpleado(this)" type="button" class="btn btn-primary">Nuevo Registro</button>
+            <button onclick="OpenModalNuevoEmpleado(this)" type="button" class="btn btn-primary">Reingreso</button>
+            <button onclick="obtenerCatalogoEmpleados()" type="button" class="btn btn-success">Consultar</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal modal-success" id="mdlNuevoEmpleado" role="dialog" aria-labelledby="myModalLabelxl">
+        <div class="modal-dialog  modal-lg animated zoomIn animated-3x" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Nuevo Registro</h5>
+                    <button onclick="cancelarCrear();" type="button" title="Cerrar" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="zmdi zmdi-close"></i></span></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frmEmpleadoNuevo" class="form-horizontal">
+                        <div class="col-md-6 col-xl-12" spellcheck="false">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="selectPlazas">Plaza a Ocupar</label>
+                                        <select class="form-control form-control-md" id="selectPlazas" name="selectPlazas">
+                                            <option selected disabled value="">--Selecciona--</option>
+                                            <option value="1">Plaza 1</option>
+                                            <option value="2">Plaza 2</option>
+                                            <option value="3">Plaza 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="validaTienePlaza()" type="button" class="btn btn-warning" id="btnCancelarRegistro">Avanzar</button>
+                    <button onclick="cancelarCrear()" id="btnGuardarRegistroNew" type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*Modal editar*@
+    <div class="modal modal-success" id="mdlEditEmpleado" role="dialog" aria-labelledby="myModalLabelxl">
+        <div class="modal-dialog  modal-lg animated zoomIn animated-3x" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Detalle Empleado</h5>
+                    <button onclick="cancelarCrear();" type="button" title="Cerrar" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="zmdi zmdi-close"></i></span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 col-md-12" spellcheck="false">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="txtCodeEmpleadoEdit">Codigo Empleado</label>
+                                    <input type="text" id="txtCodeEmpleadoEdit" class="form-control" name="txtCodeEmpleadoEdit" required>
+                                </div>
+                            </div>
+                             <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="control-label" for="txtNameEmpleadoEdit">Nombre Empleado</label>
+                                    <input type="text" id="txtNameEmpleadoEdit" class="form-control" name="txtNameEmpleadoEdit" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="cancelarEditar()" type="button" class="btn btn-sm btn-danger animated fadeInUp" id="btnCancelarRegistro" data-dismiss="modal">Cancelar</button>
+                    <button onclick="$('#mdlEditEmpleado').submit()" id="btnGuardarRegistro" type="button" class="btn btn-sm btn-success animated fadeInUp">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal modal-success" id="mdlDetailEmpleado" role="dialog" aria-labelledby="myModalLabelxl">
+        <div class="modal-dialog  modal-lg animated zoomIn animated-3x" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Detalle Empleado</h5>
+                    <button onclick="cancelarCrear();" type="button" title="Cerrar" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="zmdi zmdi-close"></i></span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 col-md-12" spellcheck="false">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <b style="font-size:small">Id</b> <p class="EstudioId animated fadeInUp" style="font-size:small; color: firebrick"> </p>
+                            </div>
+                            <div class="col-md-4">
+                                <b style="font-size:small">Nombre Empleado <span class="DescripcionEstudio" aria-hidden="true"></span></b> <p class="ValueDescripcionEstudio animated fadeInUp" style="font-size:small; color: firebrick"> </p>
+                            </div>
+                            @*<div class="col-md-2">
+                                <b style="font-size:small">Precio <span class="Precio" aria-hidden="true"></span></b> <p class="ValuePrecio animated fadeInUp" style="font-size:small; color: firebrick"> </p>
+                                </div>
+                                <div class="col-md-3">
+                                <b style="font-size:small">Categoria <span class="Categoria" aria-hidden="true"></span></b> <p class="ValueCategoria animated fadeInUp" style="font-size:small; color: firebrick"> </p>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="validaTienePlaza()" type="button" class="btn btn-warning" id="btnCancelarRegistro">Avanzar</button>
+                    <button onclick="cancelarCrear()" id="btnGuardarRegistroNew" type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*
+        <div class="row">
+        <div class="col-md-12">
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Nomina</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+        Consulta Empleados
+        </li>
+        </ol>
+        </nav>
+        </div>
+        <div class="col-md-12">
+        <div class="card">
+        <div class="card-body">
+        <div class="container">
+        <div class="row mt-3">
+        <div class="col-md-12">
+        <div class="card">
+        <div class="card-header">
+        <h4 class="text-center">Juan Pablo segundo</h4>
+        </div>
+        <div class="card-body">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+        <p>Nombre: <b>Juan</b></p>
+        <p>Apellidos:<b>Pablo</b></p>
+        <p>Apellido materno:<b>segundo</b></p>
+        </div>
+        <div class="col-md-4">
+        <p>Código Empresa: <b>10000</b></p>
+        <p>Posición (Plaza):<b>0001</b></p>
+        <p>Estatus: <b><span class="badge badge-success">Activo</span></b></p>
+        </div>
+        <div class="col-md-4">
+        <img style="width: 150px !important"
+        class="rounded-circle w-100"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgYpOOYgMxD_FO9y7jYv2F_DwMnnVMBj8rWQ&usqp=CAU"
+        alt="..." />
+        </div>
+        </div>
+        <div class="row d-flex justify-content-end align-items-center">
+        <span><i class="bx bx-save"></i></span>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
+        <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-ubicacion" role="tab" aria-controls="nav-home" aria-selected="true">Ubicación</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-fechaSueldos" role="tab" aria-controls="nav-profile" aria-selected="false">Fechas y Sueldos</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-fiscalesPersonales" role="tab" aria-controls="nav-contact" aria-selected="false">Fiscales y Personales</a>
+        </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-ubicacion" role="tabpanel" aria-labelledby="nav-home-tab"><partial name="_UbicacionVP.cshtml" /></div>
+        <div class="tab-pane fade " id="nav-fechaSueldos" role="tabpanel" aria-labelledby="nav-profile-tab"><partial name="_FechasSueldosVP.cshtml" /></div>
+        <div class="tab-pane fade " id="nav-fiscalesPersonales" role="tabpanel" aria-labelledby="nav-contact-tab"><partial name="_FiscalesPersonalesVP.cshtml" /></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>*@
+</div>
+@section scripts {
+
+<script src="~/js/Empleados/Index.js"></script>
+    }
